@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Vintage Cherthala | Premium Men's Streetwear</title>
-  <meta name="description" content="Vintage Cherthala — 25+ premium men's clothing items. Oversized shirts, baggy trousers, imported jackets, hoodies. Add to cart with animation, 5-star reviews, WhatsApp ordering.">
-  <meta name="keywords" content="vintage cherthala, mens streetwear, oversized shirt, baggy pants, hoodie, denim jacket, cart animation">
+  <meta name="description" content="Vintage Cherthala — premium men's streetwear from Kerala. Shop oversized shirts, trendy trousers, and casual wear. Sizes S/M/L. Order directly on WhatsApp with cart integration.">
+  <meta name="keywords" content="vintage cherthala, men's streetwear, oversized shirt, casual trousers, kerala fashion, whatsapp order">
   <meta name="author" content="Vintage Cherthala">
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -26,6 +26,7 @@
       --burnt-ochre: #C17A4E;
       --olive-suede: #7C8B5E;
       --antique-gold: #B88B4A;
+      --cream-bg: #F2EBE1;
     }
     .container {
       max-width: 1400px;
@@ -98,9 +99,27 @@
       margin: 20px 0 50px;
       position: relative;
     }
+    .hero::after {
+      content: "CHERTHALA";
+      font-size: 5rem;
+      font-weight: 800;
+      opacity: 0.05;
+      position: absolute;
+      bottom: 10px;
+      right: 20px;
+      font-family: 'Playfair Display';
+      pointer-events: none;
+      color: var(--deep-cedar);
+    }
     .hero h1 {
       font-size: 3.6rem;
       color: #3A281D;
+    }
+    .hero p {
+      font-size: 1.1rem;
+      color: #6E5542;
+      max-width: 560px;
+      margin: 0 auto 32px;
     }
     .btn-primary {
       background: var(--deep-cedar);
@@ -112,6 +131,10 @@
       cursor: pointer;
       transition: 0.2s;
     }
+    .btn-primary:hover {
+      background: var(--burnt-ochre);
+      transform: translateY(-3px);
+    }
     .section-header {
       text-align: center;
       margin: 55px 0 35px;
@@ -119,6 +142,9 @@
     .section-header h2 {
       font-size: 2.4rem;
       color: var(--deep-cedar);
+    }
+    .section-header p {
+      color: #8F735C;
     }
     .products-grid {
       display: grid;
@@ -184,7 +210,7 @@
       border: 1px solid #D8C7B4;
       padding: 6px 14px;
       border-radius: 40px;
-      font-size: 0.7rem;
+      font-size: 0.75rem;
       font-weight: 600;
       cursor: pointer;
       transition: 0.1s;
@@ -342,6 +368,10 @@
       border: 1px solid #C9B392;
       transition: 0.2s;
     }
+    .social-btn:hover {
+      transform: translateY(-2px);
+      background: #E7DACA;
+    }
     footer {
       text-align: center;
       padding: 40px 0 30px;
@@ -382,13 +412,22 @@
       transform: scale(1.08);
       background: #128C7E;
     }
+    .shipping-badge {
+      display: inline-block;
+      background: var(--olive-suede);
+      color: white;
+      padding: 4px 12px;
+      border-radius: 40px;
+      font-size: 0.7rem;
+      margin-top: 10px;
+    }
   </style>
 </head>
 <body>
 
 <div class="container">
   <nav>
-    <div class="logo">VINTAGE CHERTHALA<span>PREMIUM MEN'S STREETWEAR</span></div>
+    <div class="logo">VINTAGE CHERTHALA<span>STREETWEAR • KERALA</span></div>
     <div style="display: flex; align-items: center;">
       <div class="nav-links">
         <a href="#" class="active">Home</a>
@@ -404,15 +443,15 @@
   </nav>
 
   <section class="hero">
-    <h1>25+ Premium Clothing</h1>
-    <p>Imported shirts, baggy trousers, oversized hoodies, denim jackets & more. Add to cart with smooth animation, 5-star reviews.</p>
-    <button class="btn-primary" id="heroShopBtn"><i class="fas fa-store"></i> Explore Collection</button>
+    <h1>Vintage Cherthala</h1>
+    <p>Premium men's streetwear from the heart of Kerala. Oversized shirts, trendy trousers, and casual essentials — sizes S/M/L. Order directly on WhatsApp.</p>
+    <button class="btn-primary" id="heroShopBtn"><i class="fas fa-tshirt"></i> Shop Collection</button>
   </section>
 
   <div id="collection">
     <div class="section-header">
-      <h2>⚡ The Vintage Clothing Edit</h2>
-      <p>25 unique clothing products — fresh drops, premium quality</p>
+      <h2>⚡ Latest Streetwear Drops</h2>
+      <p>Curated menswear — real stock, authentic style</p>
     </div>
     <div class="products-grid" id="productsGrid"></div>
   </div>
@@ -421,20 +460,29 @@
   <div id="reviews">
     <div class="reviews-section">
       <h2 style="font-size: 2rem; color: var(--deep-cedar);"><i class="fas fa-star" style="color:#FFB83B;"></i> Customer Love <i class="fas fa-heart" style="color:#C17A4E;"></i></h2>
-      <p>Real people, real style — 5 star vibes only</p>
+      <p>Rated 5★ by our streetwear community</p>
       <div class="reviews-grid" id="reviewsGrid"></div>
     </div>
   </div>
 
   <div id="contact">
     <div class="contact-vintage">
-      <h3 style="font-size: 1.9rem;"><i class="fab fa-whatsapp"></i> Order via WhatsApp</h3>
-      <p>Add items to cart → share cart summary on WhatsApp</p>
-      <button class="social-btn wa-btn" id="whatsappCartBtn"><i class="fab fa-whatsapp"></i> Share Cart on WhatsApp</button>
-      <button class="social-btn ig-btn" id="instagramDirectBtn"><i class="fab fa-instagram"></i> @vintage_mens_fashion</button>
+      <h3 style="font-size: 1.9rem;"><i class="fab fa-whatsapp"></i> Order on WhatsApp</h3>
+      <p>Add items to cart → share cart summary for quick checkout</p>
+      <div class="shipping-badge"><i class="fas fa-truck"></i> Kerala: 1-2 days | All India: 2-3 days</div>
+      <div style="margin-top: 25px;">
+        <button class="social-btn" id="whatsappCartBtn"><i class="fab fa-whatsapp"></i> Share Cart on WhatsApp</button>
+        <button class="social-btn" id="instagramDirectBtn"><i class="fab fa-instagram"></i> @vintage_mens_fashion</button>
+      </div>
+      <div style="margin-top: 20px; font-size: 0.85rem; color: #7A5A44;">
+        <i class="fas fa-clock"></i> Operating Hours: 9:30 AM – 9:30 PM
+      </div>
     </div>
   </div>
-  <footer><p>© 2025 Vintage Cherthala — 25+ premium clothing items | Free shipping Kerala & India</p></footer>
+  <footer>
+    <p>© 2025 Vintage Cherthala — Premium Men's Streetwear | 11th Mile, Cherthala, Kerala</p>
+    <p style="margin-top: 8px;"><i class="fab fa-whatsapp"></i> +91 73563 62045 | DM for orders</p>
+  </footer>
 </div>
 
 <!-- Cart Sidebar -->
@@ -449,43 +497,30 @@
 </div>
 <div class="whatsapp-float" id="floatSupport"><i class="fab fa-whatsapp"></i></div>
 
-<script
-// ---------- PREMIUM WINTER / LUXURY STREETWEAR COLLECTION ----------
-const products = [
-  { id: 1, name: "Arctic Panel Shirt", price: 2499, img: "https://picsum.photos/seed/arcticshirt/600/800" },
-  { id: 2, name: "Glacier Oversized Tee", price: 1899, img: "https://picsum.photos/seed/glaciertee/600/800" },
-  { id: 3, name: "Frostline Baggy Trousers", price: 2899, img: "https://picsum.photos/seed/frostpants/600/800" },
-  { id: 4, name: "Iceland Linen Shirt", price: 2699, img: "https://picsum.photos/seed/icelandshirt/600/800" },
-  { id: 5, name: "Snow Washed Hoodie", price: 3499, img: "https://picsum.photos/seed/snowhoodie/600/800" },
-  { id: 6, name: "Polar Cargo Pants", price: 3199, img: "https://picsum.photos/seed/polarcargo/600/800" },
-  { id: 7, name: "Ice Patch Denim Jacket", price: 4999, img: "https://picsum.photos/seed/denimice/600/800" },
-  { id: 8, name: "Monochrome Graphic Tee", price: 1599, img: "https://picsum.photos/seed/monotee/600/800" },
-  { id: 9, name: "Wool Pleat Executive Trousers", price: 3899, img: "https://picsum.photos/seed/woolpants/600/800" },
-  { id: 10, name: "Corduroy Ice Overshirt", price: 3399, img: "https://picsum.photos/seed/cordshirt/600/800" },
-  { id: 11, name: "Box Fit Thermal Hoodie", price: 3799, img: "https://picsum.photos/seed/thermalhoodie/600/800" },
-  { id: 12, name: "Utility Tactical Vest", price: 2599, img: "https://picsum.photos/seed/tacticalvest/600/800" },
-  { id: 13, name: "Nordic Knit Sweater", price: 3199, img: "https://picsum.photos/seed/nordicsweater/600/800" },
-  { id: 14, name: "Storm Parachute Pants", price: 3499, img: "https://picsum.photos/seed/stormpants/600/800" },
-  { id: 15, name: "Embroidered Ice Denim Shirt", price: 3599, img: "https://picsum.photos/seed/embrodenim/600/800" },
-  { id: 16, name: "Fleece Glacier Half-Zip", price: 4299, img: "https://picsum.photos/seed/fleecezip/600/800" },
-  { id: 17, name: "Rugged Winter Work Jacket", price: 5999, img: "https://picsum.photos/seed/workjacket/600/800" },
-  { id: 18, name: "Frost Varsity Bomber", price: 5299, img: "https://picsum.photos/seed/varsitycold/600/800" },
-  { id: 19, name: "Flannel Snow Shirt", price: 2299, img: "https://picsum.photos/seed/flannelsnow/600/800" },
-  { id: 20, name: "Luxury Thermal Sweat Set", price: 4999, img: "https://picsum.photos/seed/sweatset/600/800" },
-  { id: 21, name: "Vintage Ice Denim Overalls", price: 5499, img: "https://picsum.photos/seed/overallice/600/800" },
-  { id: 22, name: "Wool Arctic Overcoat", price: 7999, img: "https://picsum.photos/seed/arcticoat/600/800" },
-  { id: 23, name: "Retro Snow Track Jacket", price: 3599, img: "https://picsum.photos/seed/trackice/600/800" },
-  { id: 24, name: "Minimal Linen Winter Blazer", price: 6499, img: "https://picsum.photos/seed/winterblazer/600/800" },
-  { id: 25, name: "Puffer Core Vest", price: 4299, img: "https://picsum.photos/seed/puffervest/600/800" }
-];
+<script>
+  // ---------- 12 UNIQUE PRODUCTS (Streetwear focus, S/M/L sizes, realistic pricing) ----------
+  const products = [
+    { id: 1, name: "Oversized Street Tee", price: 1499, img: "https://picsum.photos/id/20/400/400", sizes: ["S","M","L"] },
+    { id: 2, name: "Vintage Washed T-Shirt", price: 1299, img: "https://picsum.photos/id/26/400/400", sizes: ["S","M","L"] },
+    { id: 3, name: "Relaxed Fit Trousers", price: 2299, img: "https://picsum.photos/id/28/400/400", sizes: ["S","M","L"] },
+    { id: 4, name: "Imported Oversized Shirt", price: 2499, img: "https://picsum.photos/id/30/400/400", sizes: ["S","M","L"] },
+    { id: 5, name: "Streetwear Cargo Pants", price: 2799, img: "https://picsum.photos/id/32/400/400", sizes: ["S","M","L"] },
+    { id: 6, name: "Graphic Print Tee", price: 1399, img: "https://picsum.photos/id/36/400/400", sizes: ["S","M","L"] },
+    { id: 7, name: "Linen Blend Overshirt", price: 2199, img: "https://picsum.photos/id/39/400/400", sizes: ["S","M","L"] },
+    { id: 8, name: "Cropped Street Hoodie", price: 2599, img: "https://picsum.photos/id/42/400/400", sizes: ["S","M","L"] },
+    { id: 9, name: "Tapered Jogger Pants", price: 1999, img: "https://picsum.photos/id/45/400/400", sizes: ["S","M","L"] },
+    { id: 10, name: "Boxy Fit Pocket Tee", price: 1199, img: "https://picsum.photos/id/47/400/400", sizes: ["S","M","L"] },
+    { id: 11, name: "Utility Cargo Shorts", price: 1799, img: "https://picsum.photos/id/48/400/400", sizes: ["S","M","L"] },
+    { id: 12, name: "Washed Denim Jacket", price: 3499, img: "https://picsum.photos/id/51/400/400", sizes: ["S","M","L"] }
+  ];
 
-  let cart = []; // { id, name, price, size, quantity }
+  let cart = [];
   let selectedSizes = {};
 
   function getProductById(id) { return products.find(p => p.id === id); }
 
-  function saveCart() { localStorage.setItem('vintageCart', JSON.stringify(cart)); updateCartUI(); }
-  function loadCart() { const saved = localStorage.getItem('vintageCart'); if(saved) { cart = JSON.parse(saved); updateCartUI(); } }
+  function saveCart() { localStorage.setItem('vintageCherthalaCart', JSON.stringify(cart)); updateCartUI(); }
+  function loadCart() { const saved = localStorage.getItem('vintageCherthalaCart'); if(saved) { cart = JSON.parse(saved); updateCartUI(); } }
 
   function updateCartUI() {
     const count = cart.reduce((sum, item) => sum + item.quantity, 0);
@@ -516,7 +551,7 @@ const products = [
   }
 
   function addToCart(product, size) {
-    if(!size) { alert("Please select a size"); return false; }
+    if(!size) { alert("Please select a size (S, M, or L)"); return false; }
     const existing = cart.find(item => item.id === product.id && item.size === size);
     if(existing) existing.quantity++;
     else cart.push({ id: product.id, name: product.name, price: product.price, size: size, quantity: 1 });
@@ -554,7 +589,7 @@ const products = [
       `;
       grid.appendChild(card);
     });
-    // size selection
+
     document.querySelectorAll('.size-buttons').forEach(cont => {
       const pid = parseInt(cont.dataset.pid);
       const btns = cont.querySelectorAll('.size-btn');
@@ -568,28 +603,29 @@ const products = [
         });
       });
     });
+
     document.querySelectorAll('.add-to-cart').forEach(btn => {
       btn.addEventListener('click', (e) => {
         const pid = parseInt(btn.dataset.id);
         const product = getProductById(pid);
         const chosenSize = selectedSizes[pid];
         addToCart(product, chosenSize);
-        // small animation feedback
         btn.innerHTML = '<i class="fas fa-check"></i> Added!';
         setTimeout(() => btn.innerHTML = '<i class="fas fa-cart-plus"></i> Add to Cart', 800);
       });
     });
   }
 
-  // 6 x 5-star fake reviews about clothing
+  // 6 fake 5-star reviews
   const fakeReviews = [
-    { name: "Akhil S.", stars: 5, text: "The oversized fit is insane! Best quality fabric I've ever felt. Super fast shipping to Kochi. 🔥" },
-    { name: "Rahul Menon", stars: 5, text: "Vintage Cherthala never disappoints. Baggy trousers are next level, true to size. 5/5!" },
-    { name: "Vishnu P.", stars: 5, text: "Imported 5-sleeve shirt is a head-turner. Received so many compliments. Will order again. ⭐" },
-    { name: "Nandana K.", stars: 5, text: "My brother loved the hoodie. Perfect streetwear vibe and amazing customer support on WhatsApp." },
-    { name: "Fasal Rahman", stars: 5, text: "Second purchase! Quality is premium and delivery within 2 days to Trivandrum. Highly recommend." },
-    { name: "Jithin T.", stars: 5, text: "The cargo pants are super comfy and look dope. Authentic vintage style. 10/10! 🙌" }
+    { name: "Akhil S.", stars: 5, text: "The oversized tee fits perfectly! Premium quality fabric and super fast shipping to Kochi. Will order again. 🔥" },
+    { name: "Rahul Menon", stars: 5, text: "Vintage Cherthala is my go-to for streetwear. The cargo pants are so comfortable and stylish. 5/5!" },
+    { name: "Vishnu P.", stars: 5, text: "Imported oversized shirt is a head-turner. Received so many compliments. Great customer support on WhatsApp." },
+    { name: "Nandana K.", stars: 5, text: "Bought the relaxed fit trousers for my brother — he loved them! Quality is amazing and delivery was quick." },
+    { name: "Fasal Rahman", stars: 5, text: "Second purchase! Each piece is worth every rupee. Shipping to Trivandrum took just 2 days. Highly recommend!" },
+    { name: "Jithin T.", stars: 5, text: "Best streetwear brand in Kerala. The fabric quality and fits are unmatched. 10/10! 🙌" }
   ];
+
   function renderReviews() {
     const revGrid = document.getElementById('reviewsGrid');
     if(revGrid) {
@@ -609,21 +645,26 @@ const products = [
   document.getElementById('closeCart')?.addEventListener('click', closeCart);
   document.getElementById('heroShopBtn')?.addEventListener('click', ()=> document.getElementById('collection').scrollIntoView({behavior:'smooth'}));
 
+  // WhatsApp Business Number from your info: +91 7356362045
+  const BUSINESS_PHONE = "917356362045";
+
   function getCartMessage() {
-    if(cart.length===0) return "🛒 My cart is empty. Help me find some vintage clothing pieces!";
+    if(cart.length === 0) return "🛒 Hi Vintage Cherthala! I'm interested in your collection. Can you help me find something?";
     let itemsList = cart.map(i => `${i.name} (Size:${i.size}) x${i.quantity} - ₹${i.price*i.quantity}`).join('%0A');
     let total = cart.reduce((s,i)=> s+(i.price*i.quantity),0);
-    return `🛍️ *Vintage Cherthala Order*%0A${itemsList}%0A%0A📦 Total: ₹${total}%0A📍 Shipping: Kerala/India%0A✅ I want to place this order.`;
+    return `🛍️ *VINTAGE CHERTHALA ORDER* 🛍️%0A%0A${itemsList}%0A%0A📦 Total: ₹${total}%0A📍 Delivery: Kerala/India%0A%0A✅ Please confirm availability and share payment details.`;
   }
+
   function shareCartWhatsApp() {
     const msg = getCartMessage();
-    window.open(`https://wa.me/917356362045?text=${msg}`, '_blank');
+    window.open(`https://wa.me/${BUSINESS_PHONE}?text=${msg}`, '_blank');
   }
+
   document.getElementById('whatsappCartBtn')?.addEventListener('click', shareCartWhatsApp);
   document.getElementById('whatsappCheckoutBtn')?.addEventListener('click', shareCartWhatsApp);
-  document.getElementById('floatSupport')?.addEventListener('click', ()=> window.open(`https://wa.me/917356362045?text=Hi! I need assistance with products`, '_blank'));
+  document.getElementById('floatSupport')?.addEventListener('click', ()=> window.open(`https://wa.me/${BUSINESS_PHONE}?text=Hi! I need assistance with your streetwear collection`, '_blank'));
   document.getElementById('instagramDirectBtn')?.addEventListener('click', ()=> window.open('https://www.instagram.com/vintage_mens_fashion', '_blank'));
-  
+
   // Smooth scroll nav
   document.querySelectorAll('.nav-links a').forEach(link => {
     link.addEventListener('click', function(e) {
@@ -635,7 +676,7 @@ const products = [
       this.classList.add('active');
     });
   });
-  
+
   renderProducts();
   loadCart();
   renderReviews();
