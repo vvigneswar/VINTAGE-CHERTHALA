@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Vintage Cherthala | Premium Men's Streetwear</title>
-  <meta name="description" content="Vintage Cherthala — premium men's streetwear from Kerala. Shop oversized shirts, trendy trousers, and casual wear. Sizes S/M/L. Order directly on WhatsApp with cart integration.">
-  <meta name="keywords" content="vintage cherthala, men's streetwear, oversized shirt, casual trousers, kerala fashion, whatsapp order">
-  <meta name="author" content="Vintage Cherthala">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <title>NOX WEAR | Premium Streetwear — Cart + Reviews + Animations</title>
+  <meta name="description" content="NOX WEAR — Premium streetwear with shopping cart, size selection, real-time stock, customer reviews, and smooth animations.">
+  <meta name="keywords" content="streetwear, nox wear, reviews, premium hoodie, cart, size control">
+  <meta name="author" content="NOX WEAR">
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&family=Playfair+Display:wght@400;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     * {
@@ -15,411 +16,492 @@
       padding: 0;
       box-sizing: border-box;
     }
+
     body {
-      background: #F5F0E8;
+      background: #0A1A12;
       font-family: 'Inter', sans-serif;
-      color: #2C2418;
+      color: #F5F0E6;
       scroll-behavior: smooth;
     }
+
     :root {
-      --deep-cedar: #5E3A2C;
-      --burnt-ochre: #C17A4E;
-      --olive-suede: #7C8B5E;
-      --antique-gold: #B88B4A;
-      --cream-bg: #F2EBE1;
+      --rose-dust: #B67E7D;
+      --mint-sage: #5DA87A;
+      --forest-deep: #2E6B46;
+      --dark-emerald: #17402A;
+      --cart-bg: #10271D;
     }
+
     .container {
-      max-width: 1400px;
+      max-width: 1300px;
       margin: 0 auto;
       padding: 0 28px;
     }
-    h1, h2, h3, .logo, .nav-links a {
-      font-family: 'Playfair Display', serif;
-    }
+
+    /* Navigation + Cart Icon */
     nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      padding: 28px 0 20px;
-      border-bottom: 2px solid rgba(94, 58, 44, 0.25);
+      padding: 24px 0;
+      border-bottom: 1px solid rgba(93, 168, 122, 0.3);
       margin-bottom: 20px;
     }
     .logo {
-      font-size: 1.9rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
       font-weight: 800;
-      color: var(--deep-cedar);
+      letter-spacing: -1px;
+      background: linear-gradient(135deg, #FFFFFF, var(--mint-sage), var(--rose-dust));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
     }
     .logo span {
-      font-size: 0.7rem;
-      letter-spacing: 4px;
+      font-size: 0.8rem;
+      letter-spacing: 3px;
+      font-weight: 400;
       display: block;
-      color: var(--burnt-ochre);
-      font-family: 'Inter', sans-serif;
+      color: var(--mint-sage);
+    }
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 28px;
     }
     .nav-links a {
-      color: #4A3729;
-      margin-left: 32px;
+      color: #DDD5C5;
+      margin-left: 28px;
       text-decoration: none;
-      font-weight: 600;
+      font-weight: 500;
+      font-size: 0.9rem;
       transition: 0.2s;
     }
     .nav-links a:hover, .nav-links a.active {
-      color: var(--deep-cedar);
-      border-bottom: 1.5px solid var(--antique-gold);
-      padding-bottom: 4px;
+      color: var(--rose-dust);
     }
     .cart-icon {
       position: relative;
       cursor: pointer;
-      font-size: 1.5rem;
-      color: var(--deep-cedar);
-      margin-left: 25px;
-    }
-    .cart-count {
-      position: absolute;
-      top: -10px;
-      right: -12px;
-      background: var(--burnt-ochre);
-      color: white;
-      border-radius: 50%;
-      width: 20px;
-      height: 20px;
-      font-size: 0.7rem;
-      font-weight: bold;
+      background: rgba(93, 168, 122, 0.2);
+      padding: 8px 14px;
+      border-radius: 60px;
       display: flex;
       align-items: center;
-      justify-content: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+      border: 1px solid rgba(93, 168, 122, 0.4);
     }
-    .hero {
-      background: linear-gradient(125deg, #EBE1D4, #DDD0BF);
-      border-radius: 48px;
-      padding: 70px 24px 90px;
-      text-align: center;
-      margin: 20px 0 50px;
-      position: relative;
+    .cart-icon:hover {
+      background: var(--forest-deep);
+      transform: scale(1.02);
     }
-    .hero::after {
-      content: "CHERTHALA";
-      font-size: 5rem;
+    .cart-count {
+      background: var(--rose-dust);
+      color: #0A1A12;
+      border-radius: 40px;
+      font-size: 0.7rem;
       font-weight: 800;
-      opacity: 0.05;
-      position: absolute;
-      bottom: 10px;
-      right: 20px;
-      font-family: 'Playfair Display';
-      pointer-events: none;
-      color: var(--deep-cedar);
+      padding: 2px 8px;
+      margin-left: 4px;
     }
-    .hero h1 {
-      font-size: 3.6rem;
-      color: #3A281D;
+    /* Side Cart Panel */
+    .cart-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(4px);
+      z-index: 1000;
+      visibility: hidden;
+      opacity: 0;
+      transition: visibility 0.2s, opacity 0.2s;
     }
-    .hero p {
-      font-size: 1.1rem;
-      color: #6E5542;
-      max-width: 560px;
-      margin: 0 auto 32px;
+    .cart-overlay.active {
+      visibility: visible;
+      opacity: 1;
     }
-    .btn-primary {
-      background: var(--deep-cedar);
-      color: white;
-      padding: 12px 38px;
-      border-radius: 60px;
-      font-weight: 600;
+    .cart-panel {
+      position: fixed;
+      top: 0;
+      right: -420px;
+      width: 100%;
+      max-width: 420px;
+      height: 100%;
+      background: #0F241A;
+      border-left: 2px solid var(--mint-sage);
+      box-shadow: -8px 0 30px rgba(0, 0, 0, 0.6);
+      z-index: 1001;
+      transition: right 0.35s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      display: flex;
+      flex-direction: column;
+      font-family: 'Inter', sans-serif;
+    }
+    .cart-overlay.active .cart-panel {
+      right: 0;
+    }
+    .cart-header {
+      padding: 24px 20px;
+      border-bottom: 1px solid rgba(93, 168, 122, 0.3);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .cart-header h3 {
+      font-size: 1.5rem;
+      color: var(--rose-dust);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .close-cart {
+      background: none;
       border: none;
+      color: #DDD5C5;
+      font-size: 1.8rem;
       cursor: pointer;
       transition: 0.2s;
     }
-    .btn-primary:hover {
-      background: var(--burnt-ochre);
-      transform: translateY(-3px);
+    .close-cart:hover { color: var(--rose-dust); transform: rotate(90deg); }
+    .cart-items-list {
+      flex: 1;
+      overflow-y: auto;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
     }
-    .section-header {
+    .cart-item {
+      background: #10271D;
+      border-radius: 20px;
+      padding: 12px;
+      display: flex;
+      gap: 12px;
+      border: 1px solid rgba(93, 168, 122, 0.3);
+      animation: fadeSlideUp 0.3s ease;
+    }
+    .cart-item-img {
+      width: 70px;
+      height: 70px;
+      border-radius: 16px;
+      background: #1E3A2C;
+      object-fit: cover;
+    }
+    .cart-item-details {
+      flex: 1;
+    }
+    .cart-item-name {
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+    .cart-item-size {
+      font-size: 0.7rem;
+      color: var(--mint-sage);
+    }
+    .cart-item-price {
+      color: var(--rose-dust);
+      font-weight: 600;
+      margin-top: 5px;
+    }
+    .cart-item-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .remove-item {
+      background: none;
+      border: none;
+      color: #B67E7D;
+      cursor: pointer;
+      font-size: 1.1rem;
+      transition: 0.2s;
+    }
+    .remove-item:hover { color: #ff8a7a; transform: scale(1.1); }
+    .cart-footer {
+      padding: 20px;
+      border-top: 1px solid rgba(93, 168, 122, 0.3);
+      background: #0A1A12;
+    }
+    .cart-total {
+      display: flex;
+      justify-content: space-between;
+      font-weight: 800;
+      font-size: 1.3rem;
+      margin-bottom: 20px;
+    }
+    .checkout-btn {
+      width: 100%;
+      background: var(--mint-sage);
+      color: #0A1A12;
+      padding: 14px;
+      border: none;
+      border-radius: 50px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: 0.2s;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      font-size: 1rem;
+    }
+    .empty-cart-msg {
       text-align: center;
-      margin: 55px 0 35px;
+      padding: 40px 20px;
+      color: #A8C3B0;
     }
-    .section-header h2 {
-      font-size: 2.4rem;
-      color: var(--deep-cedar);
+    /* Hero, grid, etc */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 70px 20px 90px;
+      background: radial-gradient(circle at 30% 10%, #1F3A2A, #0A1A12);
+      border-radius: 48px;
+      margin: 20px 0 50px;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(90, 168, 110, 0.3);
     }
-    .section-header p {
-      color: #8F735C;
+    .hero h1 {
+      font-size: 4.2rem;
+      font-weight: 800;
+      background: linear-gradient(125deg, #FFFFFF, var(--rose-dust), var(--mint-sage));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 18px;
     }
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 550px;
+      color: #CDC6B5;
+      margin-bottom: 32px;
+    }
+    .btn-primary {
+      background: var(--forest-deep);
+      color: #FFF;
+      padding: 14px 40px;
+      border-radius: 60px;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      transition: 0.2s;
+      display: inline-flex;
+      gap: 10px;
+    }
+    .btn-primary:hover { background: var(--mint-sage); transform: translateY(-3px); color: #0A1A12; }
+    .section-header { text-align: center; margin: 65px 0 40px; }
+    .section-header h2 { font-size: 2.5rem; font-weight: 700; margin-bottom: 12px; color: var(--rose-dust); }
     .products-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 34px;
-      margin: 20px 0 40px;
+      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+      gap: 32px;
+      margin: 20px 0 30px;
     }
     .product-card {
-      background: white;
-      border-radius: 28px;
+      background: #10271D;
+      border-radius: 32px;
       overflow: hidden;
-      transition: transform 0.25s ease, box-shadow 0.2s;
-      border: 1px solid #E2D5C6;
-      box-shadow: 0 6px 14px rgba(0,0,0,0.03);
+      transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      border: 1px solid rgba(93, 168, 122, 0.3);
+      transform: translateY(0);
     }
     .product-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 22px 28px -12px rgba(70,40,20,0.2);
-      border-color: var(--antique-gold);
+      transform: translateY(-8px);
+      box-shadow: 0 20px 30px -12px rgba(0,0,0,0.6);
+      border-color: var(--rose-dust);
     }
     .product-img {
       width: 100%;
       aspect-ratio: 1 / 1;
-      background: #EADDCB;
+      background: linear-gradient(145deg, #1E3A2C, #0D2A1C);
       overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
     }
     .product-img img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.4s;
+      transition: transform 0.4s ease;
     }
-    .product-card:hover .product-img img {
-      transform: scale(1.02);
-    }
-    .product-info {
-      padding: 20px 18px 24px;
-    }
-    .product-info h3 {
-      font-size: 1.2rem;
-      font-weight: 700;
-      margin-bottom: 6px;
-    }
-    .price {
-      font-size: 1.2rem;
-      font-weight: 800;
-      color: var(--burnt-ochre);
-      margin: 8px 0 12px;
-    }
-    .size-selector {
-      margin: 12px 0 12px;
-    }
-    .size-buttons {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
+    .product-card:hover .product-img img { transform: scale(1.05); }
+    .product-info { padding: 20px 18px 24px; }
+    .product-info h3 { font-size: 1.35rem; font-weight: 700; margin-bottom: 6px; }
+    .price { font-size: 1.3rem; font-weight: 700; color: var(--rose-dust); margin: 8px 0 12px; }
+    .size-selector { margin: 12px 0 16px; }
+    .size-buttons { display: flex; gap: 12px; flex-wrap: wrap; }
     .size-btn {
-      background: #F3EDE4;
-      border: 1px solid #D8C7B4;
-      padding: 6px 14px;
+      background: rgba(93, 168, 122, 0.15);
+      border: 1px solid var(--forest-deep);
+      color: #DDD5C5;
+      padding: 8px 18px;
       border-radius: 40px;
-      font-size: 0.75rem;
       font-weight: 600;
-      cursor: pointer;
-      transition: 0.1s;
-    }
-    .size-btn.active {
-      background: var(--deep-cedar);
-      color: white;
-      border-color: var(--deep-cedar);
-    }
-    .add-to-cart {
-      background: rgba(94,58,44,0.08);
-      border: 1.5px solid var(--antique-gold);
-      color: var(--deep-cedar);
-      padding: 10px 0;
-      width: 100%;
-      border-radius: 50px;
-      font-weight: 700;
+      font-size: 0.8rem;
       cursor: pointer;
       transition: 0.2s;
+    }
+    .size-btn.active { background: var(--mint-sage); color: #0A1A12; border-color: var(--mint-sage); }
+    .size-btn.disabled { opacity: 0.4; cursor: not-allowed; text-decoration: line-through; }
+    .stock-status { font-size: 0.7rem; margin: 8px 0 5px; color: #B67E7D; }
+    .btn-flex-row {
+      display: flex;
+      gap: 12px;
+      margin-top: 8px;
+    }
+    .btn-whatsapp-order, .btn-add-cart {
+      flex: 1;
+      padding: 10px 0;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 0.8rem;
+      cursor: pointer;
+      transition: 0.2s ease;
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 8px;
-      margin-top: 12px;
-    }
-    .add-to-cart:hover {
-      background: var(--deep-cedar);
-      color: white;
-    }
-    /* Cart Sidebar */
-    .cart-overlay {
-      position: fixed;
-      top: 0;
-      right: -500px;
-      width: 450px;
-      max-width: 90vw;
-      height: 100%;
-      background: #FFFCF8;
-      box-shadow: -5px 0 25px rgba(0,0,0,0.2);
-      z-index: 1000;
-      transition: right 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-      padding: 25px;
-      display: flex;
-      flex-direction: column;
-      border-left: 4px solid var(--antique-gold);
-    }
-    .cart-overlay.open {
-      right: 0;
-    }
-    .cart-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid #ddd0be;
-      padding-bottom: 15px;
-      margin-bottom: 20px;
-    }
-    .cart-items {
-      flex: 1;
-      overflow-y: auto;
-      margin-bottom: 20px;
-    }
-    .cart-item {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 16px;
-      padding-bottom: 12px;
-      border-bottom: 1px dashed #e2d5c6;
-      animation: fadeSlide 0.3s ease;
-    }
-    @keyframes fadeSlide {
-      from { opacity: 0; transform: translateX(20px); }
-      to { opacity: 1; transform: translateX(0); }
-    }
-    .cart-total {
-      font-weight: 800;
-      font-size: 1.2rem;
-      border-top: 2px solid var(--antique-gold);
-      padding-top: 15px;
-    }
-    .checkout-btn {
-      background: var(--deep-cedar);
-      color: white;
       border: none;
-      padding: 14px;
-      border-radius: 60px;
-      font-weight: bold;
-      margin-top: 15px;
-      cursor: pointer;
-      transition: 0.2s;
     }
-    .remove-item {
-      color: #b97f5c;
-      cursor: pointer;
-      margin-left: 12px;
-      font-size: 0.8rem;
+    .btn-whatsapp-order {
+      background: rgba(93, 168, 122, 0.2);
+      border: 1px solid var(--mint-sage);
+      color: var(--mint-sage);
     }
-    /* Reviews Section */
+    .btn-whatsapp-order:hover:not(:disabled) { background: var(--mint-sage); color: #0A1A12; }
+    .btn-add-cart {
+      background: rgba(182, 126, 125, 0.2);
+      border: 1px solid var(--rose-dust);
+      color: var(--rose-dust);
+    }
+    .btn-add-cart:hover:not(:disabled) { background: var(--rose-dust); color: #0A1A12; }
+    .btn-add-cart:disabled, .btn-whatsapp-order:disabled { opacity: 0.5; cursor: not-allowed; }
+    
+    /* Reviews Section - replaces lookbook */
     .reviews-section {
-      background: #F3EAE0;
+      margin: 60px 0 50px;
+      background: #0F241A;
       border-radius: 48px;
-      padding: 48px 32px;
-      margin: 55px 0;
-      text-align: center;
+      padding: 50px 36px;
+      border: 1px solid rgba(93, 168, 122, 0.3);
+      animation: fadeSlideUp 0.6s ease;
     }
     .reviews-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 28px;
-      margin-top: 35px;
+      margin-top: 40px;
     }
     .review-card {
-      background: white;
+      background: #10271D;
       border-radius: 28px;
-      padding: 24px;
-      text-align: left;
-      box-shadow: 0 8px 18px rgba(0,0,0,0.05);
-      border: 1px solid #e9ddcf;
-      transition: transform 0.2s;
+      padding: 24px 22px;
+      transition: all 0.25s ease;
+      border: 1px solid rgba(182, 126, 125, 0.2);
+      position: relative;
     }
     .review-card:hover {
-      transform: scale(1.01);
+      transform: translateY(-6px);
+      border-color: var(--rose-dust);
+      box-shadow: 0 15px 25px -10px rgba(0,0,0,0.4);
     }
-    .stars {
+    .review-stars {
       color: #FFB83B;
-      margin-bottom: 12px;
-      letter-spacing: 2px;
+      margin-bottom: 16px;
+      font-size: 1.1rem;
+      letter-spacing: 3px;
     }
     .review-text {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: #D4E0D0;
+      margin-bottom: 20px;
       font-style: italic;
-      color: #3D3024;
-      margin: 12px 0;
-      line-height: 1.4;
     }
     .reviewer {
-      font-weight: 700;
-      color: var(--deep-cedar);
-    }
-    .contact-vintage {
-      background: #F3EAE0;
-      border-radius: 48px;
-      padding: 48px 32px;
-      margin: 45px 0 60px;
-      text-align: center;
-    }
-    .social-btn {
-      background: #FCF9F2;
-      padding: 12px 32px;
-      border-radius: 60px;
-      display: inline-flex;
+      display: flex;
       align-items: center;
       gap: 12px;
-      margin: 8px;
-      cursor: pointer;
-      border: 1px solid #C9B392;
-      transition: 0.2s;
+      margin-top: 12px;
     }
-    .social-btn:hover {
-      transform: translateY(-2px);
-      background: #E7DACA;
-    }
-    footer {
-      text-align: center;
-      padding: 40px 0 30px;
-      border-top: 1px solid rgba(94,58,44,0.2);
-    }
-    @keyframes bounceCart {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.3); }
-      100% { transform: scale(1); }
-    }
-    .cart-animation {
-      animation: bounceCart 0.3s ease;
-    }
-    @media (max-width: 780px) {
-      .container { padding: 0 18px; }
-      .hero h1 { font-size: 2.4rem; }
-      .cart-overlay { width: 100%; right: -100%; }
-    }
-    .whatsapp-float {
-      position: fixed;
-      bottom: 24px;
-      right: 24px;
-      background: #25D366;
-      width: 54px;
-      height: 54px;
+    .reviewer-avatar {
+      width: 42px;
+      height: 42px;
+      background: var(--forest-deep);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 28px;
-      color: white;
-      cursor: pointer;
-      z-index: 99;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-      transition: 0.2s;
+      color: var(--mint-sage);
+      font-weight: bold;
+      font-size: 1.1rem;
+      border: 1px solid var(--rose-dust);
     }
-    .whatsapp-float:hover {
-      transform: scale(1.08);
-      background: #128C7E;
+    .reviewer-info h4 {
+      font-weight: 700;
+      font-size: 0.9rem;
     }
-    .shipping-badge {
-      display: inline-block;
-      background: var(--olive-suede);
-      color: white;
-      padding: 4px 12px;
-      border-radius: 40px;
+    .reviewer-info p {
       font-size: 0.7rem;
-      margin-top: 10px;
+      color: var(--mint-sage);
+    }
+    .quote-icon {
+      position: absolute;
+      right: 24px;
+      bottom: 20px;
+      opacity: 0.2;
+      font-size: 3rem;
+      color: var(--rose-dust);
+    }
+
+    .about-brand, .contact-section { margin: 60px 0; animation: fadeSlideUp 0.5s ease; }
+    .contact-section {
+      background: #0E2118;
+      border-radius: 48px;
+      padding: 52px 36px;
+      text-align: center;
+      border: 1px solid rgba(93, 168, 122, 0.4);
+    }
+    .social-btn {
+      background: #1E3A2C;
+      padding: 14px 32px;
+      border-radius: 60px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      transition: 0.2s;
+      border: 1px solid rgba(93, 168, 122, 0.5);
+      cursor: pointer;
+      margin: 0 10px 20px;
+      color: #F1F1F1;
+      font-weight: 600;
+    }
+    .social-btn.wa-btn { background: #25D36620; border-color: #5DA87A; color: #5DA87A; }
+    .social-btn.ig-btn { background: #E1306C20; border-color: #B67E7D; color: #B67E7D; }
+    .social-btn:hover { transform: translateY(-3px); filter: brightness(1.05); }
+    footer { text-align: center; padding: 45px 0 35px; border-top: 1px solid rgba(93, 168, 122, 0.2); font-size: 0.75rem; color: #8EAA9A; }
+    
+    @keyframes fadeSlideUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes bounceAdd {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); background-color: #5DA87A; color: #0A1A12; }
+      100% { transform: scale(1); }
+    }
+    .cart-bounce {
+      animation: bounceAdd 0.3s ease;
+    }
+    @media (max-width: 800px) {
+      .container { padding: 0 18px; }
+      nav { flex-direction: column; gap: 16px; }
+      .hero h1 { font-size: 2.8rem; }
+      .reviews-section { padding: 30px 20px; }
     }
   </style>
 </head>
@@ -427,259 +509,329 @@
 
 <div class="container">
   <nav>
-    <div class="logo">VINTAGE CHERTHALA<span>STREETWEAR • KERALA</span></div>
-    <div style="display: flex; align-items: center;">
+    <div class="logo">NOX WEAR<span>STREETWEAR</span></div>
+    <div class="nav-right">
       <div class="nav-links">
         <a href="#" class="active">Home</a>
         <a href="#collection">Shop</a>
         <a href="#reviews">Reviews</a>
         <a href="#contact">Contact</a>
       </div>
-      <div class="cart-icon" id="cartIcon">
+      <div class="cart-icon" id="cartIconBtn">
         <i class="fas fa-shopping-bag"></i>
-        <span class="cart-count" id="cartCount">0</span>
+        <span>Cart</span>
+        <span class="cart-count" id="cartCountBadge">0</span>
       </div>
     </div>
   </nav>
 
   <section class="hero">
-    <h1>Vintage Cherthala</h1>
-    <p>Premium men's streetwear from the heart of Kerala. Oversized shirts, trendy trousers, and casual essentials — sizes S/M/L. Order directly on WhatsApp.</p>
-    <button class="btn-primary" id="heroShopBtn"><i class="fas fa-tshirt"></i> Shop Collection</button>
+    <h1>Wear Your Identity</h1>
+    <p>Premium streetwear crafted for bold individuals. Add to cart, manage items, and checkout via WhatsApp.</p>
+    <button class="btn-primary" id="heroShopBtn"><i class="fas fa-shopping-bag"></i> Shop Collection</button>
   </section>
 
   <div id="collection">
     <div class="section-header">
-      <h2>⚡ Latest Streetwear Drops</h2>
-      <p>Curated menswear — real stock, authentic style</p>
+      <h2>⚡ Featured Collection</h2>
+      <p>Iconic drops — with cart & micro-interactions</p>
     </div>
     <div class="products-grid" id="productsGrid"></div>
   </div>
 
-  <!-- Reviews Section - 5 Star Fake Reviews -->
+  <div class="about-brand">
+    <h3>〰️ More than fabric 〰️</h3>
+    <p>We don't just sell clothes. We create statements. NOX WEAR embodies the spirit of those who break rules, rewrite culture, and wear confidence. Every stitch carries intention — for the dreamers, the creators, the outsiders.</p>
+  </div>
+
+  <!-- REVIEWS SECTION (replacing lookbook) -->
   <div id="reviews">
     <div class="reviews-section">
-      <h2 style="font-size: 2rem; color: var(--deep-cedar);"><i class="fas fa-star" style="color:#FFB83B;"></i> Customer Love <i class="fas fa-heart" style="color:#C17A4E;"></i></h2>
-      <p>Rated 5★ by our streetwear community</p>
+      <div class="section-header" style="margin: 0 0 20px 0;">
+        <h2>⭐ Customer Chronicles</h2>
+        <p>Real voices, raw love — what our tribe says</p>
+      </div>
       <div class="reviews-grid" id="reviewsGrid"></div>
     </div>
   </div>
 
   <div id="contact">
-    <div class="contact-vintage">
-      <h3 style="font-size: 1.9rem;"><i class="fab fa-whatsapp"></i> Order on WhatsApp</h3>
-      <p>Add items to cart → share cart summary for quick checkout</p>
-      <div class="shipping-badge"><i class="fas fa-truck"></i> Kerala: 1-2 days | All India: 2-3 days</div>
-      <div style="margin-top: 25px;">
-        <button class="social-btn" id="whatsappCartBtn"><i class="fab fa-whatsapp"></i> Share Cart on WhatsApp</button>
-        <button class="social-btn" id="instagramDirectBtn"><i class="fab fa-instagram"></i> @vintage_mens_fashion</button>
-      </div>
-      <div style="margin-top: 20px; font-size: 0.85rem; color: #7A5A44;">
-        <i class="fas fa-clock"></i> Operating Hours: 9:30 AM – 9:30 PM
+    <div class="contact-section">
+      <h3 style="font-size: 1.9rem; margin-bottom: 8px; color: #B67E7D;">⚡ Order on WhatsApp</h3>
+      <p style="margin-bottom: 28px;">Cart ready — ask for bulk or size queries</p>
+      <div>
+        <button class="social-btn wa-btn" id="whatsappSupportBtn"><i class="fab fa-whatsapp"></i> WhatsApp Support</button>
+        <button class="social-btn ig-btn" id="instagramBtn"><i class="fab fa-instagram"></i> @noxwear.official</button>
       </div>
     </div>
   </div>
-  <footer>
-    <p>© 2025 Vintage Cherthala — Premium Men's Streetwear | 11th Mile, Cherthala, Kerala</p>
-    <p style="margin-top: 8px;"><i class="fab fa-whatsapp"></i> +91 73563 62045 | DM for orders</p>
-  </footer>
+  <footer>© 2025 NOX WEAR — Cart + Stock + Real Reviews. <i class="fas fa-skull"></i> Limited drops</footer>
 </div>
 
-<!-- Cart Sidebar -->
-<div class="cart-overlay" id="cartSidebar">
-  <div class="cart-header">
-    <h3><i class="fas fa-shopping-bag"></i> Your Cart</h3>
-    <i class="fas fa-times" id="closeCart" style="cursor:pointer; font-size:1.4rem;"></i>
+<!-- Cart Side Panel -->
+<div class="cart-overlay" id="cartOverlay">
+  <div class="cart-panel">
+    <div class="cart-header">
+      <h3><i class="fas fa-shopping-cart"></i> Your Cart</h3>
+      <button class="close-cart" id="closeCartBtn">&times;</button>
+    </div>
+    <div class="cart-items-list" id="cartItemsList">
+      <div class="empty-cart-msg">Your cart is empty. Add some bold pieces.</div>
+    </div>
+    <div class="cart-footer" id="cartFooter" style="display: none;">
+      <div class="cart-total"><span>Total</span><span id="cartTotalPrice">₹0</span></div>
+      <button class="checkout-btn" id="checkoutWhatsAppBtn"><i class="fab fa-whatsapp"></i> Checkout on WhatsApp</button>
+    </div>
   </div>
-  <div class="cart-items" id="cartItemsList"></div>
-  <div class="cart-total" id="cartTotal">Total: ₹0</div>
-  <button class="checkout-btn" id="whatsappCheckoutBtn"><i class="fab fa-whatsapp"></i> Order on WhatsApp</button>
 </div>
-<div class="whatsapp-float" id="floatSupport"><i class="fab fa-whatsapp"></i></div>
 
 <script>
-  // ---------- 12 UNIQUE PRODUCTS (Streetwear focus, S/M/L sizes, realistic pricing) ----------
+  // ---------- PRODUCTS DATA ----------
   const products = [
-    { id: 1, name: "Oversized Street Tee", price: 1499, img: "https://picsum.photos/id/20/400/400", sizes: ["S","M","L"] },
-    { id: 2, name: "Vintage Washed T-Shirt", price: 1299, img: "https://picsum.photos/id/26/400/400", sizes: ["S","M","L"] },
-    { id: 3, name: "Relaxed Fit Trousers", price: 2299, img: "https://picsum.photos/id/28/400/400", sizes: ["S","M","L"] },
-    { id: 4, name: "Imported Oversized Shirt", price: 2499, img: "https://picsum.photos/id/30/400/400", sizes: ["S","M","L"] },
-    { id: 5, name: "Streetwear Cargo Pants", price: 2799, img: "https://picsum.photos/id/32/400/400", sizes: ["S","M","L"] },
-    { id: 6, name: "Graphic Print Tee", price: 1399, img: "https://picsum.photos/id/36/400/400", sizes: ["S","M","L"] },
-    { id: 7, name: "Linen Blend Overshirt", price: 2199, img: "https://picsum.photos/id/39/400/400", sizes: ["S","M","L"] },
-    { id: 8, name: "Cropped Street Hoodie", price: 2599, img: "https://picsum.photos/id/42/400/400", sizes: ["S","M","L"] },
-    { id: 9, name: "Tapered Jogger Pants", price: 1999, img: "https://picsum.photos/id/45/400/400", sizes: ["S","M","L"] },
-    { id: 10, name: "Boxy Fit Pocket Tee", price: 1199, img: "https://picsum.photos/id/47/400/400", sizes: ["S","M","L"] },
-    { id: 11, name: "Utility Cargo Shorts", price: 1799, img: "https://picsum.photos/id/48/400/400", sizes: ["S","M","L"] },
-    { id: 12, name: "Washed Denim Jacket", price: 3499, img: "https://picsum.photos/id/51/400/400", sizes: ["S","M","L"] }
+    { id: 1, name: "NOX OVERSIZED TEE", price: 2499, img: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=400&fit=crop", stock: { S: 5, M: 8, L: 3 } },
+    { id: 2, name: "NOX CROPPED HOODIE", price: 4299, img: "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=400&h=400&fit=crop", stock: { S: 2, M: 4, L: 6 } },
+    { id: 3, name: "DRAGON OVERSIZED", price: 2999, img: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=400&h=400&fit=crop", stock: { S: 0, M: 3, L: 7 } },
+    { id: 4, name: "BALANCE ZIP HOODIE", price: 4799, img: "https://images.unsplash.com/photo-1607345366928-199ea26cfe3e?w=400&h=400&fit=crop", stock: { S: 4, M: 5, L: 2 } },
+    { id: 5, name: "METAL LOGO TEE", price: 2199, img: "https://images.unsplash.com/photo-1503342394128-c104d54dba01?w=400&h=400&fit=crop", stock: { S: 6, M: 2, L: 0 } },
+    { id: 6, name: "STREET CARGO PANTS", price: 3999, img: "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=400&h=400&fit=crop", stock: { S: 3, M: 7, L: 4 } }
+  ];
+  
+  // ----- 5 FAKE POSITIVE REVIEWS -----
+  const reviewsData = [
+    { id: 1, name: "Arjun Mehta", location: "Mumbai", rating: 5, text: "The quality of the NOX Oversized Tee is INSANE. Fits perfectly and the fabric feels premium. Got compliments on day one. Will definitely cop more!", avatar: "AM" },
+    { id: 2, name: "Sanya Kapoor", location: "Delhi", rating: 5, text: "My go-to streetwear now. The cropped hoodie is super comfortable and the colorblock is fire. Shipping was fast and customer support replied within minutes on WhatsApp. 🔥", avatar: "SK" },
+    { id: 3, name: "Rohan Das", location: "Bengaluru", rating: 5, text: "Finally a brand that understands oversized fits. I ordered the Dragon tee and the material is thick yet breathable. The cart feature made it easy to add multiple items. 10/10.", avatar: "RD" },
+    { id: 4, name: "Zara Khan", location: "Hyderabad", rating: 5, text: "NOX WEAR is pure attitude. I bought the Balance Zip Hoodie and it's my new armor. The stitching, the zipper quality — everything screams premium. Obsessed!", avatar: "ZK" },
+    { id: 5, name: "Vikram Singh", location: "Pune", rating: 5, text: "Best streetwear purchase this year. The cargo pants fit flawlessly and the stock indicator is accurate. Plus the animations and cart make ordering smooth. Big respect.", avatar: "VS" }
   ];
 
+  const BUSINESS_PHONE = "919895200669";
   let cart = [];
   let selectedSizes = {};
 
-  function getProductById(id) { return products.find(p => p.id === id); }
-
-  function saveCart() { localStorage.setItem('vintageCherthalaCart', JSON.stringify(cart)); updateCartUI(); }
-  function loadCart() { const saved = localStorage.getItem('vintageCherthalaCart'); if(saved) { cart = JSON.parse(saved); updateCartUI(); } }
+  function getStock(product, size) { return product.stock[size] !== undefined ? product.stock[size] : 0; }
 
   function updateCartUI() {
-    const count = cart.reduce((sum, item) => sum + item.quantity, 0);
-    document.getElementById('cartCount').innerText = count;
-    const container = document.getElementById('cartItemsList');
-    if(container) {
-      if(cart.length === 0) { container.innerHTML = '<p style="text-align:center; color:gray;"><i class="fas fa-bag-shopping"></i> Cart is empty ✨</p>'; }
-      else {
-        container.innerHTML = cart.map((item, idx) => `
-          <div class="cart-item">
-            <div><strong>${item.name}</strong><br/><i class="fas fa-tag"></i> Size: ${item.size} | ₹${item.price} x ${item.quantity}</div>
-            <div><i class="fas fa-trash-alt remove-item" data-index="${idx}" style="cursor:pointer;"></i></div>
-          </div>
-        `).join('');
-      }
-      const total = cart.reduce((sum, i) => sum + (i.price * i.quantity), 0);
-      document.getElementById('cartTotal').innerHTML = `<i class="fas fa-rupee-sign"></i> Total: ₹${total}`;
+    const cartListDiv = document.getElementById('cartItemsList');
+    const cartFooter = document.getElementById('cartFooter');
+    const cartBadge = document.getElementById('cartCountBadge');
+    const totalSpan = document.getElementById('cartTotalPrice');
+    let totalItems = 0;
+    let totalPrice = 0;
+    if (!cartListDiv) return;
+    cartListDiv.innerHTML = '';
+    if (cart.length === 0) {
+      cartListDiv.innerHTML = '<div class="empty-cart-msg"><i class="fas fa-archive"></i> No items yet. Grab a piece.</div>';
+      cartFooter.style.display = 'none';
+      cartBadge.innerText = '0';
+      return;
     }
-    document.querySelectorAll('.remove-item').forEach(el => {
-      el.addEventListener('click', (e) => {
-        const idx = parseInt(el.dataset.index);
-        cart.splice(idx, 1);
-        saveCart();
-        updateCartUI();
-        animateCartIcon();
+    cartFooter.style.display = 'block';
+    cart.forEach((item, idx) => {
+      totalItems += item.quantity;
+      totalPrice += item.price * item.quantity;
+      const cartItemDiv = document.createElement('div');
+      cartItemDiv.className = 'cart-item';
+      cartItemDiv.innerHTML = `
+        <img class="cart-item-img" src="${item.img}" alt="${item.name}">
+        <div class="cart-item-details">
+          <div class="cart-item-name">${item.name}</div>
+          <div class="cart-item-size">Size: ${item.size}</div>
+          <div class="cart-item-price">₹${item.price}</div>
+          <div style="font-size: 0.7rem;">Qty: ${item.quantity}</div>
+        </div>
+        <div class="cart-item-actions">
+          <button class="remove-item" data-cartidx="${idx}"><i class="fas fa-trash-alt"></i></button>
+        </div>
+      `;
+      cartListDiv.appendChild(cartItemDiv);
+    });
+    cartBadge.innerText = totalItems;
+    totalSpan.innerText = `₹${totalPrice}`;
+    document.querySelectorAll('.remove-item').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const idx = parseInt(btn.getAttribute('data-cartidx'));
+        if (!isNaN(idx) && cart[idx]) {
+          cart.splice(idx, 1);
+          updateCartUI();
+          renderProducts();
+        }
       });
     });
   }
 
-  function addToCart(product, size) {
-    if(!size) { alert("Please select a size (S, M, or L)"); return false; }
-    const existing = cart.find(item => item.id === product.id && item.size === size);
-    if(existing) existing.quantity++;
-    else cart.push({ id: product.id, name: product.name, price: product.price, size: size, quantity: 1 });
-    saveCart();
-    animateCartIcon();
+  function addToCart(product, selectedSize) {
+    const productStock = getStock(product, selectedSize);
+    const existingItemIndex = cart.findIndex(item => item.id === product.id && item.size === selectedSize);
+    let currentQtyInCart = existingItemIndex !== -1 ? cart[existingItemIndex].quantity : 0;
+    const availableForCart = productStock - currentQtyInCart;
+    if (availableForCart <= 0) {
+      alert(`❌ Out of stock! Only ${productStock} left for size ${selectedSize}.`);
+      return false;
+    }
+    if (existingItemIndex !== -1) {
+      cart[existingItemIndex].quantity += 1;
+    } else {
+      cart.push({
+        id: product.id,
+        name: product.name,
+        price: product.price,
+        size: selectedSize,
+        img: product.img,
+        quantity: 1,
+      });
+    }
+    updateCartUI();
+    const cartIcon = document.getElementById('cartIconBtn');
+    if (cartIcon) {
+      cartIcon.classList.add('cart-bounce');
+      setTimeout(() => cartIcon.classList.remove('cart-bounce'), 300);
+    }
     return true;
-  }
-
-  function animateCartIcon() {
-    const icon = document.querySelector('.cart-icon');
-    icon.classList.add('cart-animation');
-    setTimeout(() => icon.classList.remove('cart-animation'), 300);
   }
 
   function renderProducts() {
     const grid = document.getElementById('productsGrid');
+    if (!grid) return;
     grid.innerHTML = '';
-    products.forEach(prod => {
-      if(!selectedSizes[prod.id]) selectedSizes[prod.id] = prod.sizes[0];
-      const currSize = selectedSizes[prod.id];
+    products.forEach(product => {
+      if (!selectedSizes[product.id]) {
+        const availableSize = ['S', 'M', 'L'].find(s => getStock(product, s) > 0);
+        selectedSizes[product.id] = availableSize || 'S';
+      }
+      const currentSize = selectedSizes[product.id];
+      const currentStock = getStock(product, currentSize);
+      const isOutOfStock = currentStock === 0;
+      const cartQtyForSize = cart.filter(i => i.id === product.id && i.size === currentSize).reduce((sum, i) => sum + i.quantity, 0);
+      const addToCartDisabled = isOutOfStock || (currentStock - cartQtyForSize <= 0);
       const card = document.createElement('div');
       card.className = 'product-card';
       card.innerHTML = `
-        <div class="product-img"><img src="${prod.img}" alt="${prod.name}" loading="lazy" onerror="this.src='https://picsum.photos/id/1/400/400'"></div>
+        <div class="product-img"><img src="${product.img}" alt="${product.name}" loading="lazy"></div>
         <div class="product-info">
-          <h3>${prod.name}</h3>
-          <div class="price">₹${prod.price}</div>
+          <h3>${product.name}</h3>
+          <div class="price">₹${product.price}</div>
           <div class="size-selector">
-            <div class="size-buttons" data-pid="${prod.id}">
-              ${prod.sizes.map(sz => `<button class="size-btn ${currSize===sz?'active':''}" data-size="${sz}">${sz}</button>`).join('')}
+            <span class="size-label"><i class="fas fa-ruler-combined"></i> Size (S/M/L)</span>
+            <div class="size-buttons" data-pid="${product.id}">
+              <button class="size-btn ${currentSize === 'S' ? 'active' : ''} ${getStock(product,'S') === 0 ? 'disabled' : ''}" data-size="S">S</button>
+              <button class="size-btn ${currentSize === 'M' ? 'active' : ''} ${getStock(product,'M') === 0 ? 'disabled' : ''}" data-size="M">M</button>
+              <button class="size-btn ${currentSize === 'L' ? 'active' : ''} ${getStock(product,'L') === 0 ? 'disabled' : ''}" data-size="L">L</button>
             </div>
+            <div class="stock-status" data-stockid="${product.id}">${isOutOfStock ? '❌ Out of Stock' : `✓ ${currentStock - cartQtyForSize} left`}</div>
           </div>
-          <button class="add-to-cart" data-id="${prod.id}"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+          <div class="btn-flex-row">
+            <button class="btn-add-cart" data-id="${product.id}" data-name="${product.name}" data-price="${product.price}" data-img="${product.img}" ${addToCartDisabled ? 'disabled' : ''}><i class="fas fa-cart-plus"></i> Add</button>
+            <button class="btn-whatsapp-order" data-id="${product.id}" data-name="${product.name}" data-price="${product.price}" ${isOutOfStock ? 'disabled' : ''}><i class="fab fa-whatsapp"></i> Order</button>
+          </div>
         </div>
       `;
       grid.appendChild(card);
     });
-
-    document.querySelectorAll('.size-buttons').forEach(cont => {
-      const pid = parseInt(cont.dataset.pid);
-      const btns = cont.querySelectorAll('.size-btn');
+    // size selection
+    document.querySelectorAll('.size-buttons').forEach(container => {
+      const pid = parseInt(container.getAttribute('data-pid'));
+      const btns = container.querySelectorAll('.size-btn');
       btns.forEach(btn => {
         btn.addEventListener('click', (e) => {
-          e.stopPropagation();
-          const sz = btn.dataset.size;
-          selectedSizes[pid] = sz;
-          btns.forEach(b => b.classList.remove('active'));
-          btn.classList.add('active');
+          if (btn.classList.contains('disabled')) return;
+          const newSize = btn.getAttribute('data-size');
+          const product = products.find(p => p.id === pid);
+          if (product) { selectedSizes[pid] = newSize; renderProducts(); }
         });
       });
     });
-
-    document.querySelectorAll('.add-to-cart').forEach(btn => {
+    // add to cart
+    document.querySelectorAll('.btn-add-cart').forEach(btn => {
       btn.addEventListener('click', (e) => {
-        const pid = parseInt(btn.dataset.id);
-        const product = getProductById(pid);
+        if (btn.disabled) return;
+        const pid = parseInt(btn.getAttribute('data-id'));
+        const product = products.find(p => p.id === pid);
+        if (!product) return;
         const chosenSize = selectedSizes[pid];
+        if (!chosenSize) return;
         addToCart(product, chosenSize);
-        btn.innerHTML = '<i class="fas fa-check"></i> Added!';
-        setTimeout(() => btn.innerHTML = '<i class="fas fa-cart-plus"></i> Add to Cart', 800);
+        renderProducts();
+      });
+    });
+    // direct whatsapp
+    document.querySelectorAll('.btn-whatsapp-order').forEach(btn => {
+      btn.addEventListener('click', () => {
+        if (btn.disabled) return;
+        const pid = parseInt(btn.getAttribute('data-id'));
+        const product = products.find(p => p.id === pid);
+        const size = selectedSizes[pid];
+        if (getStock(product, size) === 0) { alert("Out of stock"); return; }
+        const msg = `🖤 *NOX WEAR ORDER* 🖤%0A%0A👕 Product: ${product.name}%0A📏 Size: ${size}%0A💰 Price: ₹${product.price}%0A%0A✅ I want to place an order.`;
+        window.open(`https://wa.me/${BUSINESS_PHONE}?text=${msg}`, '_blank');
       });
     });
   }
 
-  // 6 fake 5-star reviews
-  const fakeReviews = [
-    { name: "Akhil S.", stars: 5, text: "The oversized tee fits perfectly! Premium quality fabric and super fast shipping to Kochi. Will order again. 🔥" },
-    { name: "Rahul Menon", stars: 5, text: "Vintage Cherthala is my go-to for streetwear. The cargo pants are so comfortable and stylish. 5/5!" },
-    { name: "Vishnu P.", stars: 5, text: "Imported oversized shirt is a head-turner. Received so many compliments. Great customer support on WhatsApp." },
-    { name: "Nandana K.", stars: 5, text: "Bought the relaxed fit trousers for my brother — he loved them! Quality is amazing and delivery was quick." },
-    { name: "Fasal Rahman", stars: 5, text: "Second purchase! Each piece is worth every rupee. Shipping to Trivandrum took just 2 days. Highly recommend!" },
-    { name: "Jithin T.", stars: 5, text: "Best streetwear brand in Kerala. The fabric quality and fits are unmatched. 10/10! 🙌" }
-  ];
-
+  // Render reviews
   function renderReviews() {
-    const revGrid = document.getElementById('reviewsGrid');
-    if(revGrid) {
-      revGrid.innerHTML = fakeReviews.map(rev => `
-        <div class="review-card">
-          <div class="stars">${'★'.repeat(rev.stars)}${'☆'.repeat(5-rev.stars)} <i class="fas fa-check-circle" style="color:#2ecc71;"></i></div>
-          <div class="review-text">"${rev.text}"</div>
-          <div class="reviewer"><i class="fas fa-user-astronaut"></i> — ${rev.name}</div>
+    const reviewsContainer = document.getElementById('reviewsGrid');
+    if (!reviewsContainer) return;
+    reviewsContainer.innerHTML = '';
+    reviewsData.forEach(rev => {
+      const stars = '★'.repeat(rev.rating) + '☆'.repeat(5-rev.rating);
+      const reviewDiv = document.createElement('div');
+      reviewDiv.className = 'review-card';
+      reviewDiv.innerHTML = `
+        <div class="review-stars">${stars}</div>
+        <div class="review-text">"${rev.text}"</div>
+        <div class="reviewer">
+          <div class="reviewer-avatar">${rev.avatar}</div>
+          <div class="reviewer-info">
+            <h4>${rev.name}</h4>
+            <p>${rev.location}</p>
+          </div>
         </div>
-      `).join('');
-    }
+        <div class="quote-icon"><i class="fas fa-quote-right"></i></div>
+      `;
+      reviewsContainer.appendChild(reviewDiv);
+    });
   }
 
-  function openCart() { document.getElementById('cartSidebar').classList.add('open'); }
-  function closeCart() { document.getElementById('cartSidebar').classList.remove('open'); }
-  document.getElementById('cartIcon')?.addEventListener('click', openCart);
-  document.getElementById('closeCart')?.addEventListener('click', closeCart);
-  document.getElementById('heroShopBtn')?.addEventListener('click', ()=> document.getElementById('collection').scrollIntoView({behavior:'smooth'}));
-
-  // WhatsApp Business Number from your info: +91 7356362045
-  const BUSINESS_PHONE = "917356362045";
-
-  function getCartMessage() {
-    if(cart.length === 0) return "🛒 Hi Vintage Cherthala! I'm interested in your collection. Can you help me find something?";
-    let itemsList = cart.map(i => `${i.name} (Size:${i.size}) x${i.quantity} - ₹${i.price*i.quantity}`).join('%0A');
-    let total = cart.reduce((s,i)=> s+(i.price*i.quantity),0);
-    return `🛍️ *VINTAGE CHERTHALA ORDER* 🛍️%0A%0A${itemsList}%0A%0A📦 Total: ₹${total}%0A📍 Delivery: Kerala/India%0A%0A✅ Please confirm availability and share payment details.`;
+  function checkoutCart() {
+    if (cart.length === 0) { alert("Cart is empty, add items first."); return; }
+    let message = `🖤 *NOX WEAR CART ORDER* 🖤%0A%0A📦 *Order Summary*:%0A`;
+    let total = 0;
+    cart.forEach((item, idx) => {
+      total += item.price * item.quantity;
+      message += `%0A${idx+1}. ${item.name} (Size: ${item.size}) x${item.quantity} = ₹${item.price * item.quantity}`;
+    });
+    message += `%0A%0A💰 *Total: ₹${total}*%0A%0A🙏 Please confirm payment & shipping details. 🔥 #NOXWEAR`;
+    window.open(`https://wa.me/${BUSINESS_PHONE}?text=${encodeURIComponent(message)}`, '_blank');
   }
 
-  function shareCartWhatsApp() {
-    const msg = getCartMessage();
-    window.open(`https://wa.me/${BUSINESS_PHONE}?text=${msg}`, '_blank');
-  }
+  // event listeners
+  const cartOverlay = document.getElementById('cartOverlay');
+  const openCartBtn = document.getElementById('cartIconBtn');
+  const closeCartBtn = document.getElementById('closeCartBtn');
+  openCartBtn?.addEventListener('click', () => { cartOverlay.classList.add('active'); });
+  closeCartBtn?.addEventListener('click', () => { cartOverlay.classList.remove('active'); });
+  cartOverlay?.addEventListener('click', (e) => { if(e.target === cartOverlay) cartOverlay.classList.remove('active'); });
+  document.getElementById('checkoutWhatsAppBtn')?.addEventListener('click', checkoutCart);
+  document.getElementById('heroShopBtn')?.addEventListener('click', () => document.getElementById('collection')?.scrollIntoView({ behavior: 'smooth' }));
+  document.getElementById('whatsappSupportBtn')?.addEventListener('click', () => window.open(`https://wa.me/${BUSINESS_PHONE}?text=Hello! I need assistance with sizing.`, '_blank'));
+  document.getElementById('instagramBtn')?.addEventListener('click', () => window.open('https://instagram.com/noxwear.official', '_blank'));
 
-  document.getElementById('whatsappCartBtn')?.addEventListener('click', shareCartWhatsApp);
-  document.getElementById('whatsappCheckoutBtn')?.addEventListener('click', shareCartWhatsApp);
-  document.getElementById('floatSupport')?.addEventListener('click', ()=> window.open(`https://wa.me/${BUSINESS_PHONE}?text=Hi! I need assistance with your streetwear collection`, '_blank'));
-  document.getElementById('instagramDirectBtn')?.addEventListener('click', ()=> window.open('https://www.instagram.com/vintage_mens_fashion', '_blank'));
-
-  // Smooth scroll nav
   document.querySelectorAll('.nav-links a').forEach(link => {
     link.addEventListener('click', function(e) {
       e.preventDefault();
-      const target = this.getAttribute('href');
-      if(target && target !== '#') document.querySelector(target)?.scrollIntoView({behavior:'smooth'});
-      else if(target === '#') window.scrollTo({top:0,behavior:'smooth'});
-      document.querySelectorAll('.nav-links a').forEach(l=>l.classList.remove('active'));
+      const targetId = this.getAttribute('href');
+      if (targetId && targetId !== '#') document.querySelector(targetId)?.scrollIntoView({ behavior: 'smooth' });
+      else window.scrollTo({ top: 0, behavior: 'smooth' });
+      document.querySelectorAll('.nav-links a').forEach(l => l.classList.remove('active'));
       this.classList.add('active');
+      if(cartOverlay.classList.contains('active')) cartOverlay.classList.remove('active');
     });
   });
 
   renderProducts();
-  loadCart();
   renderReviews();
+  updateCartUI();
 </script>
 </body>
 </html>
